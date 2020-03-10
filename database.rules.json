@@ -1,0 +1,27 @@
+
+  {
+	"rules": {
+	  "cities": {
+		".write": false,
+		".read": true
+	  },
+	  "districts": {
+		".write": false,
+		".read": true
+	  },
+	  "stores": {
+		".write": false,
+		".read": true
+	  },
+	  "users": {
+		"$uid": {
+		  ".write": "$uid === auth.uid"
+		}
+	  },
+	  "carts": {
+		"$uid": {
+		  ".write": "$uid === auth.uid"
+		}
+	  }
+	}
+  }

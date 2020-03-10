@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<style>
+		@keyframes load {
+			50%{
+				transform:rotatez(180deg);
+				border-style:dashed;
+				border-color:red maroon indianred orangered;
+			}
+			100%{
+				transform:rotatez(360deg);
+			}
+		}
+		#loading-indicator {
+			width:300px;
+			height:300px;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			position: fixed;
+			margin: 0 auto;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			left: 50%;
+		}
+		#loading-indicator::before {
+			content:"";
+			color:white;
+			height:50px;
+			width:50px;
+			background:transparent;
+			border-radius:50%;
+			border:20px solid red;
+			animation:load 1s infinite;
+		}
+	</style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+	<link rel="icon" type="image/png" href="<%= BASE_URL %>favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="<%= BASE_URL %>favicon-16x16.png" sizes="16x16" />
+
+	<title><%= webpackConfig.name %></title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+
+  </head>
+  <body>
+	<div id='loading-indicator'></div>
+    <noscript>
+      <strong>We're sorry but main doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+	<div id="app"></div>
+	<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;language=en&amp;key=AIzaSyDx8h3BEZkf324uMbuwFoHBXvw2M-2zC_E'></script>
+	<!-- built files will be auto injected -->
+  </body>
+</html>
